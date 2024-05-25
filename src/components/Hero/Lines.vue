@@ -54,7 +54,7 @@ onMounted(() => {
     height: 1px;
     background: linear-gradient(to left, rgb(from white r g b / 0%), rgb(169, 240, 239), rgb(from white r g b / 0%));
     position: absolute;
-    top: 0%;
+    top: 0;
     right: -10%;
     opacity: .7;
 
@@ -72,7 +72,7 @@ onMounted(() => {
     width: 1200px;
     background: linear-gradient(to right, rgba(255, 255, 255, 0.589), rgb(from white r g b / 0%));
     top: 15%;
-    left: 0px;
+    left: 0;
     animation: shine 5s infinite;
   }
 
@@ -80,7 +80,7 @@ onMounted(() => {
     width: 900px;
     background: linear-gradient(to left, rgba(157, 231, 251, 0.589) 80%, rgb(from white r g b / 0%));
     top: 26%;
-    right: 0px;
+    right: 0;
     animation: shine 4s infinite;
   }
 
@@ -88,7 +88,7 @@ onMounted(() => {
     width: 650px;
     background: linear-gradient(to right, rgba(113, 215, 243, 0.589), rgb(from white r g b / 0%));
     top: 38%;
-    left: 0px;
+    left: 0;
     animation: shine 6s infinite;
   }
 
@@ -114,7 +114,7 @@ onMounted(() => {
   }
 
   .l8 {
-    height: 0px;
+    height: 0;
   }
 }
 

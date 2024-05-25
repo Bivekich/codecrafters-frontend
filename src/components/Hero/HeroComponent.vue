@@ -9,19 +9,18 @@
 <script setup lang="ts">
 import Header from './Header.vue';
 import Nav from './Nav.vue';
-import { ref, onMounted } from 'vue'
+import {ref, onMounted, type Ref, type UnwrapRef} from 'vue'
 import axios from 'axios'
 
 interface Hero {
   _id?: string
   title: string
   description: string
-  button?: string
 }
 
-const heroes: [Hero] = ref([{
-  title: 'Title',
-  description: 'Description'
+const heroes: Ref<UnwrapRef<{ description: string; title: string }[]>> = ref([{
+  title: '',
+  description: ''
 }])
 
 const loadHeroes = async () => {
