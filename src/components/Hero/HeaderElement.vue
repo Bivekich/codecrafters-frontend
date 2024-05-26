@@ -53,6 +53,7 @@ onMounted(() => {
   justify-content: center;
   flex-direction: column;
   height: 90%;
+  position: relative;
 
   .title {
     font-size: 80px;

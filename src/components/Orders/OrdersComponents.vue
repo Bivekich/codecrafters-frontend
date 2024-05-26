@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="title">Нас выбирают.</div>
-    
+
     <div class="wrapper">
       <div class="images left">
         <div class="border b1">
@@ -9,7 +9,7 @@
           <a class="link l1" target="_blank" href="">
             <div>Подробнее</div>
             <span></span>
-            <img src="../../assets/images/arrow.svg" alt="">
+            <img src="../../assets/images/link-arrow.svg" alt="">
           </a>
         </div>
         <div class="border b2">
@@ -17,7 +17,7 @@
           <a class="link l2" target="_blank" href="https://kellocare.github.io/bim-project/">
             <div>Подробнее</div>
             <span></span>
-            <img src="../../assets/images/arrow.svg" alt="">
+            <img src="../../assets/images/link-arrow.svg" alt="">
           </a>
         </div>
       </div>
@@ -28,7 +28,7 @@
           <a class="link l3" target="_blank" href="https://asvetkon.vercel.app/">
             <div>Подробнее</div>
             <span></span>
-            <img src="../../assets/images/arrow.svg" alt="">
+            <img src="../../assets/images/link-arrow.svg" alt="">
           </a>
         </div>
 
@@ -38,7 +38,7 @@
             <a class="link l4" target="_blank" href="https://asvetkon-shop.vercel.app/">
               <div>Подробнее</div>
               <span></span>
-              <img src="../../assets/images/arrow.svg" alt="">
+              <img src="../../assets/images/link-arrow.svg" alt="">
             </a>
           </div>
           <div class="border b5">
@@ -46,7 +46,7 @@
             <a class="link l5" target="_blank" href="https://foodstore-gamma.vercel.app/">
               <div>Подробнее</div>
               <span></span>
-              <img src="../../assets/images/arrow.svg" alt="">
+              <img src="../../assets/images/link-arrow.svg" alt="">
             </a>
           </div>
         </div>
@@ -62,7 +62,7 @@
   min-height: 100vh;
   overflow: hidden;
   width: 100%;
-  height: 1200px;
+  height: 1300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,7 +80,6 @@
 .wrapper {
   display: flex;
   width: 400%;
-  //transform: translateX(5%);
   justify-content: center;
   background: #1f1f1f;
   padding: 20px;
@@ -105,21 +104,17 @@
 
       .box {
         border-radius: 10px;
-        background-repeat: no-repeat;
+        background-repeat: repeat;
         background-size: contain;
         width: 100%;
         height: 350px;
-        transition: filter 1s;
+        transition: opacity 1s;
         display: flex;
         justify-content: end;
         align-items: center;
 
         a {
           display: inline-block;
-        }
-
-        &:hover {
-          filter: brightness(70%);
         }
       }
 
@@ -137,7 +132,6 @@
         color: white;
         cursor: pointer;
         opacity: 0;
-        filter: blur(5px);
         transition: all .7s;
 
         span {
@@ -182,7 +176,7 @@
       .i1 {
         background-image: url('../../assets/images/evgeniystrokov-image.png');
         background-position: right;
-        height: 85vh;
+        height: 90vh;
       }
 
       .i2 {
@@ -193,7 +187,8 @@
       }
 
       .i3 {
-        height: 55vh;
+        height: 65vh;
+        width: 70vw;
         background-position: left top;
         background-size: contain;
         background-image: url('../../assets/images/mirrors-image.svg');
@@ -214,7 +209,7 @@
       }
 
       &:hover .box {
-        filter: brightness(70%);
+        opacity: .5;
       }
 
       &:hover .link {

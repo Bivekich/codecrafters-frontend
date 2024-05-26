@@ -7,5 +7,3 @@ import OrdersComponents from "@/components/Orders/OrdersComponents.vue";
   <HeroComponent />
   <OrdersComponents />
 </template>
-
-<style scoped></style>
