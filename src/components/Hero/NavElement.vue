@@ -26,7 +26,7 @@ onMounted(() => {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center; /* align-content заменен на align-items */
+  align-items: center;
   height: 10%;
 
   img {

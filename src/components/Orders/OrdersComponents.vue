@@ -1,3 +1,36 @@
+<script setup lang="ts">
+import {ref, onMounted} from "vue";
+import axios from "axios";
+
+interface Order {
+  id?: string;
+  image: string;
+  title: string;
+  link: string;
+}
+
+const orders = ref<Order[]>([
+  {image: '', title: '', link: ''},
+  {image: '', title: '', link: ''},
+  {image: '', title: '', link: ''},
+  {image: '', title: '', link: ''},
+  {image: '', title: '', link: ''},
+])
+
+const loadOrders = async () => {
+  try {
+    const response = await axios.get('http://localhost:3000/orders')
+    orders.value = response.data
+  } catch (error) {
+    console.error('Ошибка при загрузке заказов:', error)
+  }
+}
+
+onMounted(() => {
+  loadOrders()
+})
+</script>
+
 <template>
   <div class="container">
     <div class="title">Нас выбирают.</div>
@@ -5,17 +38,17 @@
     <div class="wrapper">
       <div class="images left">
         <div class="border b1">
-          <div class="box i1"></div>
-          <a class="link l1" target="_blank" href="">
-            <div>Подробнее</div>
+          <div class="box i1" :style="{backgroundImage: `url(${orders[0].image})`}"></div>
+          <a class="link l1" target="_blank" :href="orders[0].link">
+            <div>{{orders[0].title}}</div>
             <span></span>
             <img src="../../assets/images/link-arrow.svg" alt="">
           </a>
         </div>
         <div class="border b2">
-          <div class="box i2"></div>
-          <a class="link l2" target="_blank" href="https://kellocare.github.io/bim-project/">
-            <div>Подробнее</div>
+          <div class="box i2" :style="{backgroundImage: `url(${orders[1].image})`}"></div>
+          <a class="link l2" target="_blank" :href="orders[0].link">
+            <div>{{orders[1].title}}</div>
             <span></span>
             <img src="../../assets/images/link-arrow.svg" alt="">
           </a>
@@ -24,9 +57,9 @@
 
       <div class="images right">
         <div class="border b3">
-          <div class="box i3"></div>
-          <a class="link l3" target="_blank" href="https://asvetkon.vercel.app/">
-            <div>Подробнее</div>
+          <div class="box i3" :style="{backgroundImage: `url(${orders[2].image})`}"></div>
+          <a class="link l3" target="_blank" :href="orders[0].link">
+            <div>{{orders[2].title}}</div>
             <span></span>
             <img src="../../assets/images/link-arrow.svg" alt="">
           </a>
@@ -34,17 +67,17 @@
 
         <div class="images-group">
           <div class="border b4">
-            <div class="box i4"></div>
-            <a class="link l4" target="_blank" href="https://asvetkon-shop.vercel.app/">
-              <div>Подробнее</div>
+            <div class="box i4" :style="{backgroundImage: `url(${orders[3].image})`}"></div>
+            <a class="link l4" target="_blank" :href="orders[0].link">
+              <div>{{orders[3].title}}</div>
               <span></span>
               <img src="../../assets/images/link-arrow.svg" alt="">
             </a>
           </div>
           <div class="border b5">
-            <div class="box i5"></div>
-            <a class="link l5" target="_blank" href="https://foodstore-gamma.vercel.app/">
-              <div>Подробнее</div>
+            <div class="box i5" :style="{backgroundImage: `url(${orders[4].image})`}"></div>
+            <a class="link l5" target="_blank" :href="orders[0].link">
+              <div>{{orders[4].title}}</div>
               <span></span>
               <img src="../../assets/images/link-arrow.svg" alt="">
             </a>
@@ -72,7 +105,7 @@
 .title {
   font-size: 50px;
   background: linear-gradient(-170deg, $gradient-5);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 50px;
 }
@@ -174,7 +207,6 @@
 
       // IMAGES
       .i1 {
-        background-image: url('../../assets/images/evgeniystrokov-image.png');
         background-position: right;
         height: 90vh;
       }
@@ -183,7 +215,6 @@
         height: 600px;
         background-position: right top;
         background-size: contain;
-        background-image: url('../../assets/images/bim-image.png');
       }
 
       .i3 {
@@ -191,21 +222,18 @@
         width: 70vw;
         background-position: left top;
         background-size: contain;
-        background-image: url('../../assets/images/mirrors-image.svg');
       }
 
       .i4 {
         height: 1000px;
         background-position: left top;
         background-size: contain;
-        background-image: url('../../assets/images/acbetkon-image.png');
       }
 
       .i5 {
         height: 1000px;
         background-position: left top;
         background-size: contain;
-        background-image: url('../../assets/images/katalogvkusa-image.png');
       }
 
       &:hover .box {
