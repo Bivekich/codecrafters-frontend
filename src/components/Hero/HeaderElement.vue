@@ -1,39 +1,42 @@
-<template>
-  <div class="header">
-    <div class="title">{{ props.heroes.title }}</div>
-    <div class="description">{{ props.heroes.description }}</div>
-
-    <div class="button">
-      <button><div>Связаться</div></button>
-    </div>
-
-    <Lines />
-  </div>
-</template>
-
 <script setup lang="ts">
 import { onMounted } from 'vue';
-import Lines from './Lines.vue'
+import LinesElement from "@/components/Hero/LinesElement.vue";
 
-const props = defineProps(['heroes'])
-
+interface Heroes {
+  title: string;
+  description: string;
+}
+defineProps<{ heroes: Heroes }>();
 onMounted(() => {
-  const title = document.querySelector('.header .title')
-  const desc = document.querySelector('.header .description')
-  const button = document.querySelector('.header .button')
-  
-  let header = [title, desc, button]
+  const title = document.querySelector('.header .title') as HTMLElement;
+  const desc = document.querySelector('.header .description') as HTMLElement;
+  const button = document.querySelector('.header .button') as HTMLElement;
 
-  header.map(element => element?.classList.add('header-start'))
+  const headerElements = [title, desc, button];
 
-  for (let i = 0; i < header.length; i++) {    
+  headerElements.forEach(element => element?.classList.add('header-start'));
+
+  headerElements.forEach((element, index) => {
     setTimeout(() => {
-      header[i].style.transition = 'all 2s'
-      header[i].classList.remove('header-start')
-    }, 10)
-  }
-})
+      element.style.transition = 'all 2s';
+      element.classList.remove('header-start');
+    }, index * 100);
+  });
+});
 </script>
+
+<template>
+  <div class="header">
+    <div class="title">{{ heroes.title }}</div>
+    <div class="description">{{ heroes.description }}</div>
+
+    <div class="button">
+      <button><span>Связаться</span></button>
+    </div>
+
+    <LinesElement />
+  </div>
+</template>
 
 <style lang="scss" scoped>
 @import '../../assets/styles/colors.scss';
@@ -55,6 +58,7 @@ onMounted(() => {
     font-size: 80px;
     font-weight: bold;
     background: -webkit-linear-gradient(-100deg, $gradient-1);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -64,6 +68,7 @@ onMounted(() => {
     font-weight: 300;
     width: 600px;
     background: -webkit-linear-gradient(-90deg, $gradient-2);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -73,7 +78,8 @@ onMounted(() => {
     background: linear-gradient(-120deg, $gradient-3);
     border-radius: 50px;
     padding: 2px;
-
+    mask-image: linear-gradient(-85deg, rgba(255, 255, 255, 0.4) 10%, #ffffff 50%, rgba(255, 255, 255, 0.4) 90%);;
+    mask-size: 200%;
     -webkit-mask-image: linear-gradient(-85deg, rgba(255, 255, 255, 0.4) 10%, #ffffff 50%, rgba(255, 255, 255, 0.4) 90%);
     -webkit-mask-size: 200%;
     animation: shine 4s infinite linear;
@@ -89,29 +95,30 @@ onMounted(() => {
         animation: mouse-on 1s linear forwards;
       }
 
-      &:not( :hover ){
+      &:not(:hover) {
         animation: mouse-out 2s linear forwards;
       }
 
-      @-webkit-keyframes shine {
+      @keyframes shine {
         from { -webkit-mask-position: 150%; }
         to { -webkit-mask-position: -50%; }
       }
 
-      @-webkit-keyframes mouse-on {
+      @keyframes mouse-on {
         0% { opacity: .9; }
         50% { opacity: .7; }
         100% { opacity: .8; }
       }
 
-      @-webkit-keyframes mouse-out {
+      @keyframes mouse-out {
         0% { opacity: .8; }
         100% { opacity: 1; }
       }
     }
 
-    div {
+    span {
       background: -webkit-linear-gradient(70deg, $gradient-4);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
