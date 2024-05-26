@@ -48,8 +48,9 @@ onMounted(() => {
 .lines {
   position: absolute;
   width: 2000px;
-  height: 90%;
+  height: 100%;
   pointer-events: none;
+  top: 0;
 
   .line {
     width: 1000px;

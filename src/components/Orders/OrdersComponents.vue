@@ -66,7 +66,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  mask-image: linear-gradient(to top, rgba($dark-2, 0), rgba($dark-2, 1));
+  mask-image: linear-gradient(to top, rgba($dark-2, 0), rgba($dark-2, 1) 40%);
 }
 
 .title {
