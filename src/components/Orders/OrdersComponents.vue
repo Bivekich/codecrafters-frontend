@@ -33,6 +33,8 @@ onMounted(() => {
 
 <template>
   <div class="container">
+    <div class="gradient"></div>
+
     <div class="title">Нас выбирают.</div>
 
     <div class="wrapper">
@@ -99,7 +101,16 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  mask-image: linear-gradient(to top, rgba($dark-2, 0), rgba($dark-2, 1) 40%);
+  position: relative;
+}
+
+.gradient {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, $dark-2, rgba($dark-2, 0%));
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .title {
