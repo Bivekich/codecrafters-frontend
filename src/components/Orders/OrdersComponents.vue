@@ -76,6 +76,7 @@ onMounted(() => {
               <img src="../../assets/images/link-arrow.svg" alt="">
             </a>
           </div>
+
           <div class="border b5">
             <div class="box i5" :style="{backgroundImage: `url(${orders[4].image})`}"></div>
             <a class="link l5" target="_blank" :href="orders[0].link">
