@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    <div class="gradient"></div>
+    <div class="gradient"></div>
+
     <div class="title">
       Используем новейшие скоростные технологии.
       <div class="blur blur-4"></div>
@@ -7,7 +10,7 @@
 
     <div class="content">
       <div class="image">
-        <img src="../../assets/images/technologies/cpu.svg" alt="">
+        <img src="../../../../src/assets/images/technologies/cpu.svg" alt="">
         <div class="blur blur-1"></div>
         <div class="blur blur-2"></div>
         <div class="blur blur-3"></div>
@@ -16,7 +19,7 @@
       <div class="boxes">
         <div class="border-gradient border-gradient-vue">
           <div class="box box-vue">
-            <img src="../../assets/images/technologies/vue.svg" alt="">
+            <img src="../../../../src/assets/images/technologies/vue.svg" alt="">
             <div class="box-bottom">
               <div class="box-title">Vue</div>
               <div class="box-text">Доступный, производительный и гибкий фреймворк для создания пользовательских интерфейсов.</div>
@@ -26,7 +29,7 @@
 
         <div class="border-gradient border-gradient-express">
           <div class="box box-express">
-            <img src="../../assets/images/technologies/express.svg" alt="">
+            <img src="../../../../src/assets/images/technologies/express.svg" alt="">
             <div class="box-bottom">
               <div class="box-title">Express</div>
               <div class="box-text">Быстрый, гибкий, минималистичный веб-фреймворк для приложений Node.js.</div>
@@ -36,7 +39,7 @@
 
         <div class="border-gradient border-gradient-mongodb">
           <div class="box box-mongodb">
-            <img src="../../assets/images/technologies/mongodb.svg" alt="">
+            <img src="../../../../src/assets/images/technologies/mongodb.svg" alt="">
             <div class="box-bottom">
               <div class="box-title">MongoDB</div>
               <div class="box-text">Кроссплатформенная документально-ориентированная программа баз данных с доступным исходным кодом.</div>
@@ -87,7 +90,22 @@
   width: 100%;
   overflow: hidden;
   position: relative;
-  mask-image: linear-gradient(to left, rgba($dark-2, 0), rgba($dark-2, 1) 10%, rgba($dark-2, 1) 90%, rgba($dark-2, 0));
+}
+
+.gradient {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.gradient:nth-child(1) {
+  background: linear-gradient(to right, $dark-2, rgba($dark-2, 0) 20%);
+}
+
+.gradient:nth-child(2) {
+  background: linear-gradient(to left, $dark-2, rgba($dark-2, 0) 20%);
 }
 
 .blur {
@@ -251,8 +269,8 @@
       }
 
       @keyframes shine {
-        from { -webkit-mask-position: 150%; }
-        to { -webkit-mask-position: -50%; }
+        from { mask-position: 150%; }
+        to { mask-position: -50%; }
       }
 
       .box-express {
@@ -274,17 +292,17 @@
 
     .border-gradient-vue {
       background: linear-gradient(200deg, $gradient-7);
-      box-shadow: 0 3px 3px 0 rgba(15, 92, 71, 0.51);
+      box-shadow: 0px 3px 3px 0px rgba(15, 92, 71, 0.51);
     }
 
     .border-gradient-express {
       background: linear-gradient(50deg, $gradient-8);
-      box-shadow: 0 3px 3px 0 rgb(66, 66, 45);
+      box-shadow: 0px 3px 3px 0px rgb(66, 66, 45);
     }
 
     .border-gradient-mongodb {
       background: linear-gradient(220deg, $gradient-9);
-      box-shadow: 0 3px 3px 0 rgb(50, 83, 87);
+      box-shadow: 0px 3px 3px 0px rgb(50, 83, 87);
     }
   }
 }

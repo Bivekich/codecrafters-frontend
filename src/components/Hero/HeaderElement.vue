@@ -91,6 +91,9 @@ onMounted(() => {
       border-radius: 50px;
       padding: 10px 50px;
       cursor: pointer;
+      font-family: "Inter", sans-serif;
+      font-size: 20px;
+      font-weight: 400;
 
       &:hover {
         animation: mouse-on 1s linear forwards;
