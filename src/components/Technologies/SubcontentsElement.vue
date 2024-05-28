@@ -1,27 +1,15 @@
+<script setup lang="ts">
+import type Technology from '@/components/Technologies/TechnologyInterface'
+
+defineProps<{
+  technologies: Array<Technology>
+}>()
+</script>
+
 <template>
-  <div class="subcontent subcontent-1">
-    <div class="html">HTML</div>
-    <div class="git">Git</div>
-    <div class="pinia">Pinia</div>
-  </div>
-
-  <div class="subcontent subcontent-2">
-    <div class="webpack">Webpack</div>
-    <div class="vite">Vite</div>
-    <div class="router">Router</div>
-  </div>
-
-  <div class="subcontent subcontent-3">
-    <div class="scss">SCSS</div>
-    <div class="typescript">TypeScript</div>
-  </div>
-
-  <div class="subcontent subcontent-4">
-    <div class="sanity">Sanity</div>
-    <div class="nodejs">Node.js</div>
-    <div class="react">React</div>
-    <div class="bootstrap">Bootstrap</div>
-  </div>
+    <div v-for="number in 4" :key="number" :class="'subcontent subcontent-' + number">
+      <div v-for="subconent in technologies.filter((element) => element.group == number)" :key="subconent" :class="subconent.name"> {{ subconent.title }} </div>
+    </div>
 </template>
 
 <style scoped lang="scss">

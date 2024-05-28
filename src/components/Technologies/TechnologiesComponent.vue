@@ -1,6 +1,24 @@
 <script setup lang="ts">
 import SubcontentsElement from '@/components/Technologies/SubcontentsElement.vue'
 import TechnolgiesAnimations from '@/components/Technologies/TechnolgiesAnimations.vue'
+import type Technology from '@/components/Technologies/TechnologyInterface'
+import axios from 'axios'
+import { onMounted, ref } from 'vue'
+
+const technologies = ref<Technology[]>([
+  { title: '', name: '' }, { title: '', name: '' }, { title: '', name: '' }
+])
+
+async function loadTechnologies() {
+  try {
+    const response = await axios.get('http://localhost:2000/technologies/')
+    technologies.value = response.data
+  } catch (error) {
+    console.error('Ошибка при загрузке списка технологий:', error)
+  }
+}
+
+onMounted(loadTechnologies)
 </script>
 
 <template>
@@ -23,39 +41,19 @@ import TechnolgiesAnimations from '@/components/Technologies/TechnolgiesAnimatio
       </div>
 
       <div class="boxes">
-        <div class="border-gradient border-gradient-vue">
-          <div class="box box-vue">
-            <img src="../../../../src/assets/images/technologies/vue.svg" alt="">
+        <div v-for="(technology) in technologies.filter((object) => object.isMain)" :key="technology" class="border-gradient" :class="'border-gradient-' + technology.name">
+          <div :class="'box box-' + technology.name">
+            <img :src="'../../../../src/assets/images/technologies/' + technology.name + '.svg'" alt="">
             <div class="box-bottom">
-              <div class="box-title">Vue</div>
-              <div class="box-text">Доступный, производительный и гибкий фреймворк для создания пользовательских интерфейсов.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="border-gradient border-gradient-express">
-          <div class="box box-express">
-            <img src="../../../../src/assets/images/technologies/express.svg" alt="">
-            <div class="box-bottom">
-              <div class="box-title">Express</div>
-              <div class="box-text">Быстрый, гибкий, минималистичный веб-фреймворк для приложений Node.js.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="border-gradient border-gradient-mongodb">
-          <div class="box box-mongodb">
-            <img src="../../../../src/assets/images/technologies/mongodb.svg" alt="">
-            <div class="box-bottom">
-              <div class="box-title">MongoDB</div>
-              <div class="box-text">Кроссплатформенная документально-ориентированная программа баз данных с доступным исходным кодом.</div>
+              <div class="box-title">{{ technology.title }}</div>
+              <div class="box-text">{{ technology.description }}</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <SubcontentsElement />
+    <SubcontentsElement :technologies="technologies" />
 
   </div>
 </template>
@@ -154,10 +152,11 @@ import TechnolgiesAnimations from '@/components/Technologies/TechnolgiesAnimatio
   .boxes {
     display: flex;
     justify-content: center;
-    gap: 6%;
+    gap: 6.5%;
     width: 100%;
 
     .border-gradient {
+      box-sizing: border-box;
       width: 20%;
       height: 300px;
       border-radius: 30px;
