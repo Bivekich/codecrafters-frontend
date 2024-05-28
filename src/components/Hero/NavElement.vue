@@ -2,14 +2,14 @@
 import { onMounted } from 'vue';
 
 onMounted(() => {
-  const image = document.querySelector<HTMLImageElement>('.nav img');
+  const image = document.querySelector('.nav img') as HTMLImageElement;
 
   if (image) {
     image.classList.add('logo-start');
 
     setTimeout(() => {
       image.classList.remove('logo-start');
-    }, 20);
+    }, 0);
   }
 });
 </script>
@@ -26,7 +26,7 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10%;
+  height: 70px;
 
   img {
     width: 45px;

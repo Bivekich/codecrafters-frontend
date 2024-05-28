@@ -6,7 +6,9 @@ interface Heroes {
   title: string;
   description: string;
 }
+
 defineProps<{ heroes: Heroes }>();
+
 onMounted(() => {
   const title = document.querySelector('.header .title') as HTMLElement;
   const desc = document.querySelector('.header .description') as HTMLElement;
@@ -84,6 +86,7 @@ onMounted(() => {
     -webkit-mask-image: linear-gradient(-85deg, rgba(255, 255, 255, 0.4) 10%, #ffffff 50%, rgba(255, 255, 255, 0.4) 90%);
     -webkit-mask-size: 200%;
     animation: shine 4s infinite linear;
+    position: relative;
 
     button {
       border: 0;
@@ -94,6 +97,7 @@ onMounted(() => {
       font-family: "Inter", sans-serif;
       font-size: 20px;
       font-weight: 400;
+
 
       &:hover {
         animation: mouse-on 1s linear forwards;
