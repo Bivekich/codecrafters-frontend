@@ -207,7 +207,7 @@ onMounted(() => {
 
       .l4 {
         right: auto;
-        left: 25%;
+        left: 15%;
         top: 30%;
       }
 

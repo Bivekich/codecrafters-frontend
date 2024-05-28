@@ -1,5 +1,11 @@
+<script setup lang="ts">
+import SubcontentsElement from '@/components/Technologies/SubcontentsElement.vue'
+import TechnolgiesAnimations from '@/components/Technologies/TechnolgiesAnimations.vue'
+</script>
+
 <template>
-  <div class="container">
+  <div class="container" id="technologies">
+    <TechnolgiesAnimations />
     <div class="gradient"></div>
     <div class="gradient"></div>
 
@@ -49,29 +55,7 @@
       </div>
     </div>
 
-    <div class="subcontent subcontent-1">
-      <div class="html">HTML</div>
-      <div class="git">Git</div>
-      <div class="pinia">Pinia</div>
-    </div>
-
-    <div class="subcontent subcontent-2">
-      <div class="webpack">Webpack</div>
-      <div class="vite">Vite</div>
-      <div class="router">Router</div>
-    </div>
-
-    <div class="subcontent subcontent-3">
-      <div class="scss">SCSS</div>
-      <div class="typescript">TypeScript</div>
-    </div>
-
-    <div class="subcontent subcontent-4">
-      <div class="sanity">Sanity</div>
-      <div class="nodejs">Node.js</div>
-      <div class="react">React</div>
-      <div class="bootstrap">Bootstrap</div>
-    </div>
+    <SubcontentsElement />
 
   </div>
 </template>
@@ -101,11 +85,11 @@
 }
 
 .gradient:nth-child(1) {
-  background: linear-gradient(to right, $dark-2, rgba($dark-2, 0) 20%);
+  background: linear-gradient(to right, $dark-2, rgba($dark-2, 0) 10%);
 }
 
 .gradient:nth-child(2) {
-  background: linear-gradient(to left, $dark-2, rgba($dark-2, 0) 20%);
+  background: linear-gradient(to left, $dark-2, rgba($dark-2, 0) 10%);
 }
 
 .blur {
@@ -119,7 +103,6 @@
   mask-image: radial-gradient(rgba($dark-2, 1), rgba($dark-2, 0) 80%);
   pointer-events: none;
 }
-
 
 .blur-2 {
   left: auto;
@@ -136,60 +119,6 @@
   top: -50px;
   width: 600px;
   mask-image: linear-gradient(to right, rgba($dark-2, .8), rgba($dark-2, 0));
-}
-
-.subcontent {
-  position: absolute;
-  display: flex;
-  gap: 30px;
-  opacity: .7;
-
-  div {
-    width: 80px;
-    border-radius: 50px;
-    padding: 5px 20px;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  @mixin subcontent($color) {
-    color: $color;
-    border: 1px solid $color;
-    background: rgba($color, .1);
-  }
-
-  .html { @include subcontent(#ae7a5a); }
-  .git { @include subcontent(#869495); }
-  .pinia { @include subcontent(#779853); }
-  .webpack { @include subcontent(#538b98); }
-  .vite { @include subcontent(#574a8c); }
-  .router { @include subcontent(#359852); }
-  .scss { @include subcontent(#87394d); }
-  .typescript { @include subcontent(#988c3c); }
-  .sanity { @include subcontent(#8f4f4f); }
-  .nodejs { @include subcontent(#588f4f); }
-  .react { @include subcontent(#646a63); }
-  .bootstrap { @include subcontent(#257e7e); }
-}
-
-.subcontent-1 {
-  top: 5%;
-  right: -5%;
-}
-
-.subcontent-2 {
-  top: 25%;
-  left: -5%;
-}
-
-.subcontent-3 {
-  top: 45%;
-  right: -5%;
-}
-
-.subcontent-4 {
-  top: 90%;
-  left: -5%;
 }
 
 .title {
@@ -212,7 +141,7 @@
   z-index: 10;
 
   .image {
-    width: 60%;
+    width: 55%;
     position: relative;
 
     img {
@@ -225,7 +154,7 @@
   .boxes {
     display: flex;
     justify-content: center;
-    gap: 8.5%;
+    gap: 6%;
     width: 100%;
 
     .border-gradient {
@@ -265,7 +194,7 @@
         .box-text { color: #79978f; }
         img { width: 90px }
         mask-image: linear-gradient(-80deg, rgba(255, 255, 255, 0.9) 10%, #ffffff 30%, rgba(255, 255, 255, 0.9) 90%);
-        animation: shine 3s infinite linear;
+        //animation: shine 3s infinite linear;
       }
 
       @keyframes shine {
@@ -278,7 +207,7 @@
         .box-text { color: #939378; }
         img { width: 85px }
         mask-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.9) 10%, #ffffff 50%, rgba(255, 255, 255, 0.9) 90%);
-        animation: shine 3.2s infinite linear;
+        //animation: shine 3.2s infinite linear;
       }
 
       .box-mongodb {
@@ -286,7 +215,7 @@
         .box-text { color: #758c8e; }
         img { height: 85px }
         mask-image: linear-gradient(-70deg, rgba(255, 255, 255, 0.9) 10%, #ffffff 70%, rgba(255, 255, 255, 0.9) 90%);
-        animation: shine 4s infinite linear;
+        //animation: shine 4s infinite linear;
       }
     }
 

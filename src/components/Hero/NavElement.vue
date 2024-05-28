@@ -8,7 +8,6 @@ onMounted(() => {
     image.classList.add('logo-start');
 
     setTimeout(() => {
-      image.style.transition = 'all 2s, transform .4s';
       image.classList.remove('logo-start');
     }, 20);
   }
@@ -17,7 +16,7 @@ onMounted(() => {
 
 <template>
   <div class="nav">
-    <img class="logo-start" src="@/assets/images/codecrafters-logo.svg" alt="Codecrafters Logo">
+    <img class="logo logo-start" src="@/assets/images/codecrafters-logo.svg" alt="Codecrafters Logo">
   </div>
 </template>
 

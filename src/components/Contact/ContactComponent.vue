@@ -36,7 +36,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 600px;
   background: $dark-2;
   gap: 10%;
   position: relative;
@@ -55,11 +55,11 @@
 }
 
 .gradient:nth-child(2) {
-  background: linear-gradient(to left, $dark-2, rgba($dark-2, 0) 20%);
+  background: linear-gradient(to left, $dark-2, rgba($dark-2, 0) 15%);
 }
 
 .gradient:nth-child(3) {
-  background: linear-gradient(to right, $dark-2, rgba($dark-2, 0) 20%);
+  background: linear-gradient(to right, $dark-2, rgba($dark-2, 0) 15%);
 }
 
 .left {
@@ -93,7 +93,7 @@
     }
 
     .line:nth-child(2) {
-      height: 100vh;
+      height: 1200px;
       width: 1px;
       top: 0;
       left: 10%;
@@ -164,12 +164,12 @@
 
   img:nth-child(1) {
     position: absolute;
-    left: -50px;
+    left: -30px;
   }
 
   img:nth-child(2) {
     position: relative;
-    left: 100px;
+    left: 80px;
     top: 50px;
   }
 }

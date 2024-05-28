@@ -22,3 +22,14 @@ button {
   padding: 5px 20px;
   border-radius: 20px;
 }
+
+.logo {
+  width: 45px;
+  mix-blend-mode: color-dodge;
+  cursor: pointer;
+  transition: all 2s, transform .4s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
