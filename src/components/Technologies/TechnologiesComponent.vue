@@ -11,7 +11,7 @@ const technologies = ref<Technology[]>([
 
 async function loadTechnologies() {
   try {
-    const response = await axios.get('http://localhost:2000/technologies/')
+    const response = await axios.get('http://localhost:3000/technologies/')
     technologies.value = response.data
   } catch (error) {
     console.error('Ошибка при загрузке списка технологий:', error)
