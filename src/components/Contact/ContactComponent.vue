@@ -1,3 +1,29 @@
+<script lang="ts" setup>
+import axios from 'axios'
+import { onMounted, ref } from 'vue'
+
+interface Contact {
+  title: string
+  text: string
+  button: string
+}
+
+const contact = ref<Contact[]>([{
+  title: '', text: '', button: ''
+}])
+
+async function getContact() {
+  try {
+    const response = await axios.get('http://localhost:3000/contact')
+    contact.value = response.data
+  } catch (error) {
+    console.log('Не удалось получить контакты: ', error)
+  }
+}
+
+onMounted(getContact)
+</script>
+
 <template>
   <div class="container">
     <div class="gradient"></div>
@@ -6,20 +32,19 @@
 
     <div class="left">
       <div class="title">
-        Начнем вместе.
+        {{ contact[0].title }}
 
         <div class="line"></div>
         <div class="line"></div>
       </div>
 
       <div class="text">
-        Просто введите свой никнейм из Telegram и мы свяжемся с вами в ближайшее время.
-        <p>Вы так же можете указать идеи, особенности, тип проекта по желанию.</p>
+        {{ contact[0].text }}
       </div>
       <div class="input">
         <img src="../../assets/images/contact/arroba.png" alt="">
         <input type="text" placeholder="Введите userid...">
-        <button>Отправить</button>
+        <button>{{ contact[0].button }}</button>
       </div>
     </div>
     <div class="right">
