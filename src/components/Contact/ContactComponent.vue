@@ -199,5 +199,3 @@ onMounted(getContact)
   }
 }
 </style>
-<script setup lang="ts">
-</script>

@@ -1,3 +1,29 @@
+<script setup lang="ts">
+import axios from 'axios'
+import { onMounted, ref } from 'vue'
+
+interface Comment {
+  text: string
+  author: string
+  src: string
+}
+
+const comments = ref<Comment[]>([{
+  text: '', author: '', src: ''
+}])
+
+async function getComments() {
+  try {
+    const response = await axios.get('http://localhost:3000/comments')
+    comments.value = response.data
+  } catch (error) {
+    console.error('Комментарии не найдены: ', error)
+  }
+}
+
+onMounted(getComments)
+</script>
+
 <template>
   <div class="container" id="comments">
     <div class="text">
@@ -13,36 +39,15 @@
     </div>
 
     <div class="boxes">
-      <div class="box box-1">
-        <div class="text">
-          “Lorem ispum dolar amet amet iclum. Je connais que Vika es la jollie fille quelle es amon avec mois. J’adore Vika. Elle avon bette yeux. Elle comment un sunshine.”
-        </div>
+      <div
+        v-for="(comment, i) in comments" :key="comment"
+        :class="'box-' + (i + 1)" class="box"
+      >
+        <div class="text">{{ comment.text }}</div>
 
         <div class="bottom">
           <div class="circle"></div>
-          <div class="author">Евгений Строкин</div>
-        </div>
-      </div>
-
-      <div class="box box-2">
-        <div class="text">
-          “Je connais que Vika es la jollie fille quelle es ami avec mois. J’adore Vika. Elle avon bette yeux. Elle comment un sunshine.”
-        </div>
-
-        <div class="bottom">
-          <div class="circle"></div>
-          <div class="author">Виталик Бутерин</div>
-        </div>
-      </div>
-
-      <div class="box box-3">
-        <div class="text">
-          “J’adore Vika. Elle avon bette yeux. Elle comment un sunshine.”
-        </div>
-
-        <div class="bottom">
-          <div class="circle"></div>
-          <div class="author">Даймонд Ниам</div>
+          <div class="author">{{ comment.author }}</div>
         </div>
       </div>
     </div>
@@ -179,5 +184,3 @@
   }
 }
 </style>
-<script setup lang="ts">
-</script>

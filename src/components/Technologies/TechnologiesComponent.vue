@@ -41,7 +41,10 @@ onMounted(loadTechnologies)
       </div>
 
       <div class="boxes">
-        <div v-for="(technology) in technologies.filter((object) => object.isMain)" :key="technology" class="border-gradient" :class="'border-gradient-' + technology.name">
+        <div
+          v-for="(technology) in technologies.filter((object) => object.isMain)" :key="technology"
+          class="border-gradient" :class="'border-gradient-' + technology.name"
+        >
           <div :class="'box box-' + technology.name">
             <img :src="'../../../../src/assets/images/technologies/' + technology.name + '.svg'" alt="">
             <div class="box-bottom">
