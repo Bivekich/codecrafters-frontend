@@ -27,14 +27,19 @@ onMounted(loadTechnologies)
     <div class="gradient"></div>
     <div class="gradient"></div>
 
-    <div class="title">
+    <div class="title title-desktop">
       Используем новейшие скоростные технологии.
       <div class="blur blur-4"></div>
     </div>
 
+    <div class="title title-mobile">
+      Новейшие технологии.
+    </div>
+
     <div class="content">
       <div class="image">
-        <img src="../../../../src/assets/images/technologies/cpu.svg" alt="">
+        <img class="main-image-desktop" src="../../../../src/assets/images/technologies/cpu.svg" alt="">
+        <img class="main-image-mobile" src="../../../../src/assets/images/technologies/cpu-mobile.svg" alt="">
         <div class="blur blur-1"></div>
         <div class="blur blur-2"></div>
         <div class="blur blur-3"></div>
@@ -42,9 +47,13 @@ onMounted(loadTechnologies)
 
       <div class="boxes">
         <div
-          v-for="(technology) in technologies.filter((object) => object.isMain)" :key="technology"
+          v-for="(technology, index) in technologies.filter((object) => object.isMain)" :key="technology"
           class="border-gradient" :class="'border-gradient-' + technology.name"
         >
+          <img
+            v-if="index !== 0" class="mobile-lines" :class="'lines-' + technology.name"
+            :src="'../../../../src/assets/images/technologies/' + technology.name + '-lines.svg'" alt=""
+          >
           <div :class="'box box-' + technology.name">
             <img :src="'../../../../src/assets/images/technologies/' + technology.name + '.svg'" alt="">
             <div class="box-bottom">
@@ -65,7 +74,7 @@ onMounted(loadTechnologies)
 @import "../../assets/styles/colors";
 
 .container {
-  height: 950px;
+  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -81,16 +90,16 @@ onMounted(loadTechnologies)
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 2;
+  z-index: 100;
   pointer-events: none;
 }
 
 .gradient:nth-child(1) {
-  background: linear-gradient(to right, $dark-2, rgba($dark-2, 0) 10%);
+  background: linear-gradient(to right, $dark-2, rgba($dark-2, 0) 15%);
 }
 
 .gradient:nth-child(2) {
-  background: linear-gradient(to left, $dark-2, rgba($dark-2, 0) 10%);
+  background: linear-gradient(to left, $dark-2, rgba($dark-2, 0) 15%);
 }
 
 .blur {
@@ -133,6 +142,10 @@ onMounted(loadTechnologies)
   margin-top: 7%;
 }
 
+.title-mobile {
+  display: none;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -150,6 +163,10 @@ onMounted(loadTechnologies)
       width: 100%;
       display: block;
     }
+
+    .main-image-mobile {
+      display: none;
+    }
   }
 
   .boxes {
@@ -157,11 +174,16 @@ onMounted(loadTechnologies)
     justify-content: center;
     gap: 6.5%;
     width: 100%;
+    margin-bottom: 10%;
+    
+    .mobile-lines {
+      display: none;
+    }
 
     .border-gradient {
       box-sizing: border-box;
       width: 20%;
-      height: 300px;
+      height: 330px;
       border-radius: 30px;
       padding: .06em;
 
@@ -234,6 +256,117 @@ onMounted(loadTechnologies)
     .border-gradient-mongodb {
       background: linear-gradient(220deg, $gradient-9);
       box-shadow: 0px 3px 3px 0px rgb(50, 83, 87);
+    }
+  }
+}
+
+
+@media only screen and (max-width: 900px) {
+  .container {
+    height: 100%;
+    gap: 50px;
+  }
+
+  .blur {
+    display: none;
+  }
+  
+  .title {
+    width: 300px;
+    margin-top: 20%;
+  }
+
+  .title-desktop {
+    display: none;
+  }
+
+  .title-mobile {
+    display: block;
+  }
+
+  .content {
+    .image {
+      width: 150%;
+      position: relative;
+
+      .main-image-desktop {
+        display: none;
+      }
+
+      .main-image-mobile {
+        display: block;
+      }
+    }
+
+    .boxes {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 6.5%;
+      width: 100%;
+      position: relative;
+
+      .mobile-lines {
+        display: block;
+        position: absolute;
+        width: 50%;
+      }
+
+      .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .lines-express {
+        top: 47%;
+        left: -35%;
+      }
+
+      .lines-mongodb {
+        top: 80%;
+        right: -35%;
+      }
+
+      .border-gradient {
+        box-sizing: border-box;
+        width: 70%;
+        border-radius: 30px;
+        padding: .06em;
+        margin-bottom: 30px;
+      }
+
+      .border-gradient-vue {
+        background: linear-gradient(200deg, $gradient-7);
+        box-shadow: 0px 3px 3px 0px rgba(15, 92, 71, 0.51);
+      }
+
+      .border-gradient-express {
+        background: linear-gradient(50deg, $gradient-8);
+        box-shadow: 0px 3px 3px 0px rgb(66, 66, 45);
+      }
+
+      .border-gradient-mongodb {
+        background: linear-gradient(220deg, $gradient-9);
+        box-shadow: 0px 3px 3px 0px rgb(50, 83, 87);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .title {
+    line-height: 32px;
+    font-size: 35px;
+  }
+
+  .content {
+    .boxes {
+      .border-gradient {
+        height: 330px;
+      }
     }
   }
 }

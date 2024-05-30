@@ -95,7 +95,6 @@ onMounted(() => {
 @import "../../assets/styles/colors";
 
 .container {
-  min-height: 100vh;
   overflow: hidden;
   width: 100%;
   height: 1300px;
@@ -231,7 +230,6 @@ onMounted(() => {
 
       .i3 {
         height: 65vh;
-        width: 70vw;
         background-position: left top;
         background-size: contain;
       }
@@ -272,6 +270,82 @@ onMounted(() => {
     .b4, .b5 {
       width: 400px;
     }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    height: 1000px;
+  }
+
+  .wrapper {
+    padding: 10px;
+
+    .images {
+      .border {
+        box-sizing: border-box;
+        border: 1px dotted rgba(255, 255, 255, 0.2);
+        padding: 10px;
+        width: 100%;
+        position: relative;
+
+        .box {
+          border-radius: 10px;
+          background-repeat: repeat;
+          background-size: contain;
+          width: 100%;
+          height: 350px;
+          transition: opacity 1s;
+          display: flex;
+          justify-content: end;
+          align-items: center;
+
+          a {
+            display: inline-block;
+          }
+        }
+
+        .link {
+          display: none;
+        }
+
+        // IMAGES
+        .i1 {
+          height: 500px;
+        }
+
+        .i2 {
+          height: 300px;
+        }
+
+        .i3 {
+          height: 300px;
+        }
+
+        .i4 {
+          height: 600px;
+        }
+
+        &:hover .box {
+          opacity: 1;
+        }
+      }
+
+      // BORDERS
+      .b4 {
+        width: 100%;
+      }
+
+      .b5 {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: 35px;
   }
 }
 </style>

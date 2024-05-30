@@ -66,4 +66,16 @@ defineProps<{
   top: 90%;
   left: -5%;
 }
+
+@media only screen and (max-width: 1100px) {
+  .subcontent {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .subcontent {
+    display: none;
+  }
+}
 </style>

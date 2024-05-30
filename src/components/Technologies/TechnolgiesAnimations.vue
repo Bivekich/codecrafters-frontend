@@ -28,6 +28,8 @@ onMounted((): void => {
   const title = component.querySelector('.title') as HTMLElement
   title.style.opacity = '0'
 
+  console.log(title)
+
   const blur4 = component.querySelector('.blur-4') as HTMLElement
   blur4.style.left = '-100vh'
 

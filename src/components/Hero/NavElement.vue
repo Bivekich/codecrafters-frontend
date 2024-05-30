@@ -44,4 +44,30 @@ onMounted(() => {
     transform: rotate(20deg);
   }
 }
+
+@media only screen and (max-width: 900px) {
+  .nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+
+    img {
+      width: 50px;
+      mix-blend-mode: color-dodge;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    .logo-start {
+      opacity: 0;
+      filter: blur(5px);
+      transform: rotate(20deg);
+    }
+  }
+}
 </style>

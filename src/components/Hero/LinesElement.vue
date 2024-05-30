@@ -1,16 +1,3 @@
-<template>
-  <div class="lines">
-    <div class="line l1"></div>
-    <div class="line l2"></div>
-    <div class="line l3"></div>
-    <div class="line l4"></div>
-    <div class="line l5"></div>
-    <div class="line l6"></div>
-    <div class="line l7"></div>
-    <div class="line l8"></div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { onMounted } from 'vue';
 
@@ -43,6 +30,19 @@ onMounted(() => {
   }, 0);
 });
 </script>
+
+<template>
+  <div class="lines">
+    <div class="line l1"></div>
+    <div class="line l2"></div>
+    <div class="line l3"></div>
+    <div class="line l4"></div>
+    <div class="line l5"></div>
+    <div class="line l6"></div>
+    <div class="line l7"></div>
+    <div class="line l8"></div>
+  </div>
+</template>
 
 <style scoped lang="scss">
 .lines {
@@ -125,5 +125,49 @@ onMounted(() => {
 @keyframes shine {
   from { -webkit-mask-position: 150%; }
   to { -webkit-mask-position: -50%; }
+}
+
+@media only screen and (max-width: 600px) {
+  .lines {
+    .l2 {
+      width: 700px;
+      top: 15%;
+      left: 20%;
+      animation: shine 5s infinite;
+    }
+
+    .l3 {
+      width: 300px;
+      background: linear-gradient(to left, rgba(157, 231, 251, 0.589) 80%, rgba(255, 255, 255, 0%));
+      top: 26%;
+      right: 30%;
+      animation: shine 4s infinite;
+    }
+
+    .l4 {
+      display: none;
+    }
+
+    .l5 {
+      display: none;
+    }
+
+    .l6 {
+      width: 400px;
+      left: 30%;
+    }
+
+    .l7 {
+      width: 800px;
+      background: linear-gradient(to left, rgba(113, 215, 243, 0.589), rgba(255, 255, 255, 0%));
+      right: 20%;
+      top: 90%;
+      animation: shine 4s infinite;
+    }
+
+    .l8 {
+      height: 0;
+    }
+  }
 }
 </style>

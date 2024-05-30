@@ -43,7 +43,7 @@ onMounted(getComments)
         v-for="(comment, i) in comments" :key="comment"
         :class="'box-' + (i + 1)" class="box"
       >
-        <div class="text">{{ comment.text }}</div>
+        <div class="comment">{{ comment.text }}</div>
 
         <div class="bottom">
           <div class="circle"></div>
@@ -137,8 +137,10 @@ onMounted(getComments)
     justify-content: space-between;
     flex-direction: column;
 
-    .text {
+    .comment {
       color: white;
+      font-weight: 300;
+      line-height: 1;
     }
 
     .bottom {
@@ -179,6 +181,88 @@ onMounted(getComments)
     .bottom {
       .circle {
         background: #656150;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    height: 100%;
+  }
+
+  .text {
+    color: #7e7e7e;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1;
+    width: 80%;
+    margin-top: 20%;
+
+    div {
+      display: inline-block;
+      font-weight: 400;
+      color: white;
+    }
+  }
+
+  .button {
+    div {
+      font-size: 18px;
+    }
+
+    img {
+      filter: invert(1);
+      margin: 0 auto;
+      width: 16px;
+    }
+  }
+
+  .boxes {
+    margin-top: 70px;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    margin-bottom: 80px;
+
+    .box {
+      box-sizing: border-box;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      border-left: 0;
+      width: 100%;
+      gap: 20px;
+
+      .comment {
+        font-size: 18px;
+      }
+
+      .bottom {
+        .circle {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+
+    .box-3 {
+      border-bottom: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .text {
+    font-size: 15px;
+  }
+
+  .button {
+    width: 250px;
+  }
+
+  .boxes {
+    .box {
+      .comment {
+        font-size: 15px;
       }
     }
   }
