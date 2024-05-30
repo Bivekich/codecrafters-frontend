@@ -1,27 +1,8 @@
 <script setup lang="ts">
-import axios from 'axios'
-import { onMounted, ref } from 'vue'
+import { useApi } from '@/stores/api'
 
-interface Comment {
-  text: string
-  author: string
-  src: string
-}
-
-const comments = ref<Comment[]>([{
-  text: '', author: '', src: ''
-}])
-
-async function getComments() {
-  try {
-    const response = await axios.get('http://localhost:3000/comments')
-    comments.value = response.data
-  } catch (error) {
-    console.error('Комментарии не найдены: ', error)
-  }
-}
-
-onMounted(getComments)
+const api = useApi()
+const comments = await api.getData('comments')
 </script>
 
 <template>

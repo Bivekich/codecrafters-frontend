@@ -1,34 +1,9 @@
 <script setup lang="ts">
-import {ref, onMounted} from "vue";
-import axios from "axios";
+import { useApi } from '@/stores/api'
+import type Order from '@/components/Orders/OrderInterface'
 
-interface Order {
-  id?: string;
-  image: string;
-  title: string;
-  link: string;
-}
-
-const orders = ref<Order[]>([
-  {image: '', title: '', link: ''},
-  {image: '', title: '', link: ''},
-  {image: '', title: '', link: ''},
-  {image: '', title: '', link: ''},
-  {image: '', title: '', link: ''},
-])
-
-const loadOrders = async () => {
-  try {
-    const response = await axios.get('http://localhost:3000/orders')
-    orders.value = response.data
-  } catch (error) {
-    console.error('Ошибка при загрузке заказов:', error)
-  }
-}
-
-onMounted(() => {
-  loadOrders()
-})
+const api = useApi()
+const orders: Order[] = await api.getData('orders')
 </script>
 
 <template>

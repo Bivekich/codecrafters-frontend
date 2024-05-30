@@ -8,10 +8,10 @@ import FooterComponent from '@/components/Footer/FooterComponent.vue'
 </script>
 
 <template>
-  <HeroComponent />
-  <OrdersComponents />
-  <TechnologiesComponent />
-  <ContactComponent />
-  <CommentsComponent />
-  <FooterComponent />
+  <Suspense><HeroComponent /></Suspense>
+  <Suspense><OrdersComponents /></Suspense>
+  <Suspense><TechnologiesComponent /></Suspense>
+  <Suspense><ContactComponent /></Suspense>
+  <Suspense><CommentsComponent /></Suspense>
+  <Suspense><FooterComponent /></Suspense>
 </template>

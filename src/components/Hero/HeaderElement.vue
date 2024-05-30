@@ -22,7 +22,7 @@ onMounted(() => {
     setTimeout(() => {
       element.style.transition = 'all 2s';
       element.classList.remove('header-start');
-    }, index * 100);
+    }, (index + 1) * 100);
   });
 });
 </script>

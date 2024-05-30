@@ -2,23 +2,10 @@
 import SubcontentsElement from '@/components/Technologies/SubcontentsElement.vue'
 import TechnolgiesAnimations from '@/components/Technologies/TechnolgiesAnimations.vue'
 import type Technology from '@/components/Technologies/TechnologyInterface'
-import axios from 'axios'
-import { onMounted, ref } from 'vue'
+import { useApi } from '@/stores/api'
 
-const technologies = ref<Technology[]>([
-  { title: '', name: '' }, { title: '', name: '' }, { title: '', name: '' }
-])
-
-async function loadTechnologies() {
-  try {
-    const response = await axios.get('http://localhost:3000/technologies/')
-    technologies.value = response.data
-  } catch (error) {
-    console.error('Ошибка при загрузке списка технологий:', error)
-  }
-}
-
-onMounted(loadTechnologies)
+const api = useApi()
+const technologies: Technology[] = await api.getData('technologies')
 </script>
 
 <template>

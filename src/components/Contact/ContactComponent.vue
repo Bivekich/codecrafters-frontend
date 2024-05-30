@@ -1,27 +1,9 @@
 <script lang="ts" setup>
-import axios from 'axios'
-import { onMounted, ref } from 'vue'
+import { useApi } from '@/stores/api'
+import type Contact from '@/components/Contact/ContactInterface'
 
-interface Contact {
-  title: string
-  text: string
-  button: string
-}
-
-const contact = ref<Contact[]>([{
-  title: '', text: '', button: ''
-}])
-
-async function getContact() {
-  try {
-    const response = await axios.get('http://localhost:3000/contact')
-    contact.value = response.data
-  } catch (error) {
-    console.log('Не удалось получить контакты: ', error)
-  }
-}
-
-onMounted(getContact)
+const api = useApi()
+const contact: Contact[] = await api.getData('contact')
 </script>
 
 <template>
@@ -218,7 +200,6 @@ onMounted(getContact)
 
     .title {
       margin-bottom: 40px;
-      line-height: 32px;
 
       .line {
         display: none;
