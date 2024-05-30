@@ -24,6 +24,13 @@ onMounted(() => {
       element.classList.remove('header-start');
     }, (index + 1) * 100);
   });
+
+  button.onclick = () => {
+    const contact = document.getElementById('contact') as HTMLElement
+    contact.scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
 });
 </script>
 
