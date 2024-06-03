@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export const useApi = defineStore("api", {
   state: () => ({
-    endpoint: 'http://localhost:3000/'
+    endpoint: 'https://codecrafters-backend.vercel.app/'
   }),
   actions: {
     async getData(data: string) {

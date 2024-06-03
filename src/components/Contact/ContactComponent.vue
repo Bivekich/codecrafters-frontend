@@ -11,7 +11,7 @@ const sendMessage = async () => {
   }
 
   try {
-    const response = await axios.post('http://localhost:3000/send-telegram-message', {
+    const response = await axios.post('https://codecrafters-backend.vercel.app/send-telegram-message', {
       userName: userName.value,
     });
 
