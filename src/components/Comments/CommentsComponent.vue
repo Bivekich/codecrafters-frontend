@@ -3,6 +3,13 @@ import { useApi } from '@/stores/api'
 
 const api = useApi()
 const comments = await api.getData('comments')
+
+const handleClick = () => {
+  const orders = document.getElementById('orders') as HTMLElement
+  orders.scrollIntoView({
+    behavior: 'smooth'
+  });
+}
 </script>
 
 <template>
@@ -14,7 +21,7 @@ const comments = await api.getData('comments')
     </div>
 
     <div class="button">
-      <div>Примеры работ</div>
+      <div @click="handleClick">Примеры работ</div>
       <span></span>
       <img src="../../assets/images/link-arrow.svg" alt="">
     </div>

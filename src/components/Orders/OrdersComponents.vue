@@ -7,7 +7,7 @@ const orders: Order[] = await api.getData('orders')
 </script>
 
 <template>
-  <div class="container">
+  <div class="container" id="orders">
     <div class="gradient"></div>
 
     <div class="title">Нас выбирают.</div>

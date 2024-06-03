@@ -1,32 +1,51 @@
 <script lang="ts" setup>
-import { useApi } from '@/stores/api'
-import type Contact from '@/components/Contact/ContactInterface'
+import { ref } from 'vue';
+import axios from 'axios';
 
-const api = useApi()
-const contact: Contact[] = await api.getData('contact')
+const userName = ref('');
+
+const sendMessage = async () => {
+  if (!userName.value) {
+    alert('Введите username');
+    return;
+  }
+
+  try {
+    const response = await axios.post('http://localhost:3000/send-telegram-message', {
+      userName: userName.value,
+    });
+
+    if (response.status === 200) {
+      alert('Заявка успешно создана!');
+      userName.value = '';
+    }
+  } catch (error) {
+    alert(`Ошибка при отправке сообщения: ${error.response?.data || error.message}`);
+  }
+};
 </script>
 
 <template>
-  <div class="container">
+  <div class="container" id="contact">
     <div class="gradient"></div>
     <div class="gradient"></div>
     <div class="gradient"></div>
 
     <div class="left">
       <div class="title">
-        {{ contact[0].title }}
+        Начнем вместе.
 
         <div class="line"></div>
         <div class="line"></div>
       </div>
 
       <div class="text">
-        {{ contact[0].text }}
+        Просто введите свой никнейм из Telegram и мы свяжемся с вами в ближайшее время. Вы так же можете указать идеи, особенности, тип проекта по желанию.
       </div>
       <div class="input">
         <img src="../../assets/images/contact/arroba.png" alt="">
-        <input type="text" placeholder="Введите userid...">
-        <button>{{ contact[0].button }}</button>
+        <input v-model="userName" type="text" placeholder="Введите userid...">
+        <button @click="sendMessage">Отправить</button>
       </div>
     </div>
     <div class="right">
