@@ -20,7 +20,7 @@ const sendMessage = async () => {
       userName.value = ''
     }
   } catch (error) {
-    alert(`Ошибка при отправке сообщения: ${error.response?.data || error.message}`)
+    alert(`Ошибка при отправке сообщения: ${(error as any).response?.data || (error as any).message}`)
   }
 }
 </script>

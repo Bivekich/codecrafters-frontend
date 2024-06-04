@@ -32,7 +32,7 @@ const technologies: Technology[] = await api.getData('technologies')
 
       <div class="boxes">
         <div
-          v-for="(technology, index) in technologies.filter((object) => object.isMain)" :key="technology"
+          v-for="(technology, index) in technologies.filter((object) => object.isMain)" :key="technology._id"
           class="border-gradient" :class="'border-gradient-' + technology.name"
         >
           <img

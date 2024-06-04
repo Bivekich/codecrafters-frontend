@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <div v-for="number in 4" :key="number" :class="'subcontent subcontent-' + number">
-    <div v-for="subconent in technologies.filter((element) => element.group == number)" :key="subconent"
+    <div v-for="subconent in technologies.filter((element) => element.group == number)" :key="subconent._id"
          :class="subconent.name"> {{ subconent.title }}
     </div>
   </div>
