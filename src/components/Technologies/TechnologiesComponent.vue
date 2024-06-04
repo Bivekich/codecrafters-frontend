@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SubcontentsElement from '@/components/Technologies/SubcontentsElement.vue'
-import TechnolgiesAnimations from '@/components/Technologies/TechnolgiesAnimations.vue'
+import TechnologiesAnimations from '@/components/Technologies/TechnologiesAnimations.vue'
 import type Technology from '@/components/Technologies/TechnologyInterface'
 import { useApi } from '@/stores/api'
 
@@ -10,7 +10,7 @@ const technologies: Technology[] = await api.getData('technologies')
 
 <template>
   <div class="container" id="technologies">
-    <TechnolgiesAnimations />
+    <TechnologiesAnimations />
     <div class="gradient"></div>
     <div class="gradient"></div>
 
@@ -25,8 +25,8 @@ const technologies: Technology[] = await api.getData('technologies')
 
     <div class="content">
       <div class="image">
-        <img class="main-image-desktop" src="../../../../src/assets/images/technologies/cpu.svg" alt="">
-        <img class="main-image-mobile" src="../../../../src/assets/images/technologies/cpu-mobile.svg" alt="">
+        <img class="main-image-desktop" src="../../assets/images/technologies/cpu.svg" alt="Главная картинка">
+        <img class="main-image-mobile" src="../../assets/images/technologies/cpu-mobile.svg" alt="Главная картинка">
         <div class="blur blur-1"></div>
         <div class="blur blur-2"></div>
         <div class="blur blur-3"></div>
@@ -39,10 +39,10 @@ const technologies: Technology[] = await api.getData('technologies')
         >
           <img
             v-if="index !== 0" class="mobile-lines" :class="'lines-' + technology.name"
-            :src="'../../../../src/assets/images/technologies/' + technology.name + '-lines.svg'" alt=""
+            :src="'../../../../src/assets/images/technologies/' + technology.name + '-lines.svg'" alt="Картинка технологии"
           >
           <div :class="'box box-' + technology.name">
-            <img :src="'../../../../src/assets/images/technologies/' + technology.name + '.svg'" alt="">
+            <img :src="'../../../../src/assets/images/technologies/' + technology.name + '.svg'" alt="Картинка технологии">
             <div class="box-bottom">
               <div class="box-title">{{ technology.title }}</div>
               <div class="box-text">{{ technology.description }}</div>
@@ -232,17 +232,17 @@ const technologies: Technology[] = await api.getData('technologies')
 
     .border-gradient-vue {
       background: linear-gradient(200deg, $gradient-7);
-      box-shadow: 0px 3px 3px 0px rgba(15, 92, 71, 0.51);
+      box-shadow: 0 3px 3px 0 rgba(15, 92, 71, 0.51);
     }
 
     .border-gradient-express {
       background: linear-gradient(50deg, $gradient-8);
-      box-shadow: 0px 3px 3px 0px rgb(66, 66, 45);
+      box-shadow: 0 3px 3px 0 rgb(66, 66, 45);
     }
 
     .border-gradient-mongodb {
       background: linear-gradient(220deg, $gradient-9);
-      box-shadow: 0px 3px 3px 0px rgb(50, 83, 87);
+      box-shadow: 0 3px 3px 0 rgb(50, 83, 87);
     }
   }
 }
@@ -327,17 +327,17 @@ const technologies: Technology[] = await api.getData('technologies')
 
       .border-gradient-vue {
         background: linear-gradient(200deg, $gradient-7);
-        box-shadow: 0px 3px 3px 0px rgba(15, 92, 71, 0.51);
+        box-shadow: 0 3px 3px 0 rgba(15, 92, 71, 0.51);
       }
 
       .border-gradient-express {
         background: linear-gradient(50deg, $gradient-8);
-        box-shadow: 0px 3px 3px 0px rgb(66, 66, 45);
+        box-shadow: 0 3px 3px 0 rgb(66, 66, 45);
       }
 
       .border-gradient-mongodb {
         background: linear-gradient(220deg, $gradient-9);
-        box-shadow: 0px 3px 3px 0px rgb(50, 83, 87);
+        box-shadow: 0 3px 3px 0 rgb(50, 83, 87);
       }
     }
   }
