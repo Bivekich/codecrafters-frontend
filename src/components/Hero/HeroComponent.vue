@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import NavElement from "@/components/Hero/NavElement.vue";
-import HeaderComponent from "@/components/Hero/HeaderElement.vue";
+import NavElement from '@/components/Hero/NavElement.vue'
+import HeaderComponent from '@/components/Hero/HeaderElement.vue'
 import { useApi } from '@/stores/api'
 import type Hero from '@/components/Hero/HeroInterface'
 

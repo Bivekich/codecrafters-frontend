@@ -1,28 +1,28 @@
 <script lang="ts" setup>
-import { ref } from 'vue';
-import axios from 'axios';
+import { ref } from 'vue'
+import axios from 'axios'
 
-const userName = ref('');
+const userName = ref('')
 
 const sendMessage = async () => {
   if (!userName.value) {
-    alert('Введите username');
-    return;
+    alert('Введите username')
+    return
   }
 
   try {
     const response = await axios.post('https://codecrafters-backend.vercel.app/send-telegram-message', {
-      userName: userName.value,
-    });
+      userName: userName.value
+    })
 
     if (response.status === 200) {
-      alert('Заявка успешно создана!');
-      userName.value = '';
+      alert('Заявка успешно создана!')
+      userName.value = ''
     }
   } catch (error) {
-    alert(`Ошибка при отправке сообщения: ${error.response?.data || error.message}`);
+    alert(`Ошибка при отправке сообщения: ${error.response?.data || error.message}`)
   }
-};
+}
 </script>
 
 <template>
@@ -40,7 +40,8 @@ const sendMessage = async () => {
       </div>
 
       <div class="text">
-        Просто введите свой никнейм из Telegram и мы свяжемся с вами в ближайшее время. Вы так же можете указать идеи, особенности, тип проекта по желанию.
+        Просто введите свой никнейм из Telegram и мы свяжемся с вами в ближайшее время. Вы так же можете указать идеи,
+        особенности, тип проекта по желанию.
       </div>
       <div class="input">
         <img src="../../assets/images/contact/arroba.png" alt="">

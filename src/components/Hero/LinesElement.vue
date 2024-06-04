@@ -1,34 +1,34 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted } from 'vue'
 
 onMounted(() => {
-  const lines = document.querySelectorAll<HTMLDivElement>('.lines .line');
-  const originStyles: string[] = [];
+  const lines = document.querySelectorAll<HTMLDivElement>('.lines .line')
+  const originStyles: string[] = []
 
   lines.forEach((line, index) => {
-    const style = getComputedStyle(line);
+    const style = getComputedStyle(line)
 
     if ((index + 1) % 2 === 0) {
-      originStyles.push(style.getPropertyValue('left'));
-      line.style.left = `${parseInt(style.getPropertyValue('left')) - 2000}px`;
+      originStyles.push(style.getPropertyValue('left'))
+      line.style.left = `${parseInt(style.getPropertyValue('left')) - 2000}px`
     } else {
-      originStyles.push(style.getPropertyValue('right'));
-      line.style.right = `${parseInt(style.getPropertyValue('right')) - 2000}px`;
+      originStyles.push(style.getPropertyValue('right'))
+      line.style.right = `${parseInt(style.getPropertyValue('right')) - 2000}px`
     }
-  });
+  })
 
   setTimeout(() => {
     lines.forEach((line, index) => {
-      line.style.transition = 'all 5s';
+      line.style.transition = 'all 5s'
 
       if ((index + 1) % 2 === 0) {
-        line.style.left = originStyles[index];
+        line.style.left = originStyles[index]
       } else {
-        line.style.right = originStyles[index];
+        line.style.right = originStyles[index]
       }
-    });
-  }, 0);
-});
+    })
+  }, 0)
+})
 </script>
 
 <template>
@@ -123,8 +123,12 @@ onMounted(() => {
 }
 
 @keyframes shine {
-  from { -webkit-mask-position: 150%; }
-  to { -webkit-mask-position: -50%; }
+  from {
+    -webkit-mask-position: 150%;
+  }
+  to {
+    -webkit-mask-position: -50%;
+  }
 }
 
 @media only screen and (max-width: 600px) {

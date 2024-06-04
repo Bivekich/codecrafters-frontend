@@ -1,37 +1,37 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
-import LinesElement from "@/components/Hero/LinesElement.vue";
+import { onMounted } from 'vue'
+import LinesElement from '@/components/Hero/LinesElement.vue'
 
 interface Heroes {
   title: string;
   description: string;
 }
 
-defineProps<{ heroes: Heroes }>();
+defineProps<{ heroes: Heroes }>()
 
 onMounted(() => {
-  const title = document.querySelector('.header .title') as HTMLElement;
-  const desc = document.querySelector('.header .description') as HTMLElement;
-  const button = document.querySelector('.header .button') as HTMLElement;
+  const title = document.querySelector('.header .title') as HTMLElement
+  const desc = document.querySelector('.header .description') as HTMLElement
+  const button = document.querySelector('.header .button') as HTMLElement
 
-  const headerElements = [title, desc, button];
+  const headerElements = [title, desc, button]
 
-  headerElements.forEach(element => element?.classList.add('header-start'));
+  headerElements.forEach(element => element?.classList.add('header-start'))
 
   headerElements.forEach((element, index) => {
     setTimeout(() => {
-      element.style.transition = 'all 2s';
-      element.classList.remove('header-start');
-    }, (index + 1) * 100);
-  });
+      element.style.transition = 'all 2s'
+      element.classList.remove('header-start')
+    }, (index + 1) * 100)
+  })
 
   button.onclick = () => {
     const contact = document.getElementById('contact') as HTMLElement
     contact.scrollIntoView({
       behavior: 'smooth'
-    });
+    })
   }
-});
+})
 </script>
 
 <template>
@@ -115,19 +115,33 @@ onMounted(() => {
       }
 
       @keyframes shine {
-        from { -webkit-mask-position: 150%; }
-        to { -webkit-mask-position: -50%; }
+        from {
+          -webkit-mask-position: 150%;
+        }
+        to {
+          -webkit-mask-position: -50%;
+        }
       }
 
       @keyframes mouse-on {
-        0% { opacity: .9; }
-        50% { opacity: .7; }
-        100% { opacity: .8; }
+        0% {
+          opacity: .9;
+        }
+        50% {
+          opacity: .7;
+        }
+        100% {
+          opacity: .8;
+        }
       }
 
       @keyframes mouse-out {
-        0% { opacity: .8; }
-        100% { opacity: 1; }
+        0% {
+          opacity: .8;
+        }
+        100% {
+          opacity: 1;
+        }
       }
     }
 
@@ -174,19 +188,33 @@ onMounted(() => {
         }
 
         @keyframes shine {
-          from { -webkit-mask-position: 150%; }
-          to { -webkit-mask-position: -50%; }
+          from {
+            -webkit-mask-position: 150%;
+          }
+          to {
+            -webkit-mask-position: -50%;
+          }
         }
 
         @keyframes mouse-on {
-          0% { opacity: .9; }
-          50% { opacity: .7; }
-          100% { opacity: .8; }
+          0% {
+            opacity: .9;
+          }
+          50% {
+            opacity: .7;
+          }
+          100% {
+            opacity: .8;
+          }
         }
 
         @keyframes mouse-out {
-          0% { opacity: .8; }
-          100% { opacity: 1; }
+          0% {
+            opacity: .8;
+          }
+          100% {
+            opacity: 1;
+          }
         }
       }
 
@@ -205,6 +233,7 @@ onMounted(() => {
     .title {
       font-size: 45px;
     }
+
     .description {
       font-size: 15px;
       width: 300px;

@@ -8,16 +8,24 @@ const handleClick = () => {
   const orders = document.getElementById('orders') as HTMLElement
   orders.scrollIntoView({
     behavior: 'smooth'
-  });
+  })
 }
 </script>
 
 <template>
   <div class="container" id="comments">
     <div class="text">
-      Исследуем <div>эффективность</div>, <div>технологичность</div> и <div>юзер-экспириенс</div>.
+      Исследуем
+      <div>эффективность</div>
+      ,
+      <div>технологичность</div>
+      и
+      <div>юзер-экспириенс</div>
+      .
       <br><br>
-      Большие люди доверяют <div>CodeCrafters</div>.
+      Большие люди доверяют
+      <div>CodeCrafters</div>
+      .
     </div>
 
     <div class="button">
@@ -139,6 +147,7 @@ const handleClick = () => {
         border-radius: 50%;
         border: 1px solid rgba(255, 255, 255, 0.2);
       }
+
       .author {
         color: #c6c6c6;
         font-weight: 300;
@@ -150,6 +159,7 @@ const handleClick = () => {
 
   .box-1 {
     border-left: 0;
+
     .bottom {
       .circle {
         background: #50655f;

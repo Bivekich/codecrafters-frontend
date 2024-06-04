@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted } from 'vue'
 
 onMounted(() => {
-  const image = document.querySelector('.nav img') as HTMLImageElement;
+  const image = document.querySelector('.nav img') as HTMLImageElement
 
   if (image) {
-    image.classList.add('logo-start');
+    image.classList.add('logo-start')
 
     setTimeout(() => {
-      image.classList.remove('logo-start');
-    }, 0);
+      image.classList.remove('logo-start')
+    }, 0)
   }
-});
+})
 </script>
 
 <template>

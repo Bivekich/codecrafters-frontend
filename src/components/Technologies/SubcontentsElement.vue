@@ -7,9 +7,11 @@ defineProps<{
 </script>
 
 <template>
-    <div v-for="number in 4" :key="number" :class="'subcontent subcontent-' + number">
-      <div v-for="subconent in technologies.filter((element) => element.group == number)" :key="subconent" :class="subconent.name"> {{ subconent.title }} </div>
+  <div v-for="number in 4" :key="number" :class="'subcontent subcontent-' + number">
+    <div v-for="subconent in technologies.filter((element) => element.group == number)" :key="subconent"
+         :class="subconent.name"> {{ subconent.title }}
     </div>
+  </div>
 </template>
 
 <style scoped lang="scss">
@@ -33,18 +35,53 @@ defineProps<{
     background: rgba($color, .1);
   }
 
-  .html { @include subcontent(#ae7a5a); }
-  .git { @include subcontent(#869495); }
-  .pinia { @include subcontent(#779853); }
-  .webpack { @include subcontent(#538b98); }
-  .vite { @include subcontent(#574a8c); }
-  .router { @include subcontent(#359852); }
-  .scss { @include subcontent(#87394d); }
-  .typescript { @include subcontent(#988c3c); }
-  .sanity { @include subcontent(#8f4f4f); }
-  .nodejs { @include subcontent(#588f4f); }
-  .react { @include subcontent(#646a63); }
-  .bootstrap { @include subcontent(#257e7e); }
+  .html {
+    @include subcontent(#ae7a5a);
+  }
+
+  .git {
+    @include subcontent(#869495);
+  }
+
+  .pinia {
+    @include subcontent(#779853);
+  }
+
+  .webpack {
+    @include subcontent(#538b98);
+  }
+
+  .vite {
+    @include subcontent(#574a8c);
+  }
+
+  .router {
+    @include subcontent(#359852);
+  }
+
+  .scss {
+    @include subcontent(#87394d);
+  }
+
+  .typescript {
+    @include subcontent(#988c3c);
+  }
+
+  .sanity {
+    @include subcontent(#8f4f4f);
+  }
+
+  .nodejs {
+    @include subcontent(#588f4f);
+  }
+
+  .react {
+    @include subcontent(#646a63);
+  }
+
+  .bootstrap {
+    @include subcontent(#257e7e);
+  }
 }
 
 .subcontent-1 {

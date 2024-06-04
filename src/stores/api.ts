@@ -1,7 +1,7 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia'
 import axios from 'axios'
 
-export const useApi = defineStore("api", {
+export const useApi = defineStore('api', {
   state: () => ({
     endpoint: 'https://codecrafters-backend.vercel.app/'
   }),
@@ -11,7 +11,7 @@ export const useApi = defineStore("api", {
         const response = await axios.get(this.endpoint + data)
         return response.data
       } catch (error) {
-        console.error('Ошибка:', error);
+        console.error('Ошибка:', error)
       }
     }
   }

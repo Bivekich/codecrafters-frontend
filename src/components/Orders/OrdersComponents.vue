@@ -17,7 +17,7 @@ const orders: Order[] = await api.getData('orders')
         <div class="border b1">
           <div class="box i1" :style="{backgroundImage: `url(${orders[0].image})`}"></div>
           <a class="link l1" target="_blank" :href="orders[0].link">
-            <div>{{orders[0].title}}</div>
+            <div>{{ orders[0].title }}</div>
             <span></span>
             <img src="../../assets/images/link-arrow.svg" alt="">
           </a>
@@ -25,7 +25,7 @@ const orders: Order[] = await api.getData('orders')
         <div class="border b2">
           <div class="box i2" :style="{backgroundImage: `url(${orders[1].image})`}"></div>
           <a class="link l2" target="_blank" :href="orders[0].link">
-            <div>{{orders[1].title}}</div>
+            <div>{{ orders[1].title }}</div>
             <span></span>
             <img src="../../assets/images/link-arrow.svg" alt="">
           </a>
@@ -36,7 +36,7 @@ const orders: Order[] = await api.getData('orders')
         <div class="border b3">
           <div class="box i3" :style="{backgroundImage: `url(${orders[2].image})`}"></div>
           <a class="link l3" target="_blank" :href="orders[0].link">
-            <div>{{orders[2].title}}</div>
+            <div>{{ orders[2].title }}</div>
             <span></span>
             <img src="../../assets/images/link-arrow.svg" alt="">
           </a>
@@ -46,7 +46,7 @@ const orders: Order[] = await api.getData('orders')
           <div class="border b4">
             <div class="box i4" :style="{backgroundImage: `url(${orders[3].image})`}"></div>
             <a class="link l4" target="_blank" :href="orders[0].link">
-              <div>{{orders[3].title}}</div>
+              <div>{{ orders[3].title }}</div>
               <span></span>
               <img src="../../assets/images/link-arrow.svg" alt="">
             </a>
@@ -55,7 +55,7 @@ const orders: Order[] = await api.getData('orders')
           <div class="border b5">
             <div class="box i5" :style="{backgroundImage: `url(${orders[4].image})`}"></div>
             <a class="link l5" target="_blank" :href="orders[0].link">
-              <div>{{orders[4].title}}</div>
+              <div>{{ orders[4].title }}</div>
               <span></span>
               <img src="../../assets/images/link-arrow.svg" alt="">
             </a>
