@@ -39,10 +39,10 @@ const technologies: Technology[] = await api.getData('technologies')
         >
           <img
             v-if="index !== 0" class="mobile-lines" :class="'lines-' + technology.name"
-            :src="'../../../../src/assets/images/technologies/' + technology.name + '-lines.svg'" alt="Картинка технологии"
+            :src="'../../assets/images/technologies/' + technology.name + '-lines.svg'" alt="Картинка технологии"
           >
           <div :class="'box box-' + technology.name">
-            <img :src="'../../../../src/assets/images/technologies/' + technology.name + '.svg'" alt="Картинка технологии">
+            <img :src="'../../assets/images/technologies/' + technology.name + '.svg'" alt="Картинка технологии">
             <div class="box-bottom">
               <div class="box-title">{{ technology.title }}</div>
               <div class="box-text">{{ technology.description }}</div>
