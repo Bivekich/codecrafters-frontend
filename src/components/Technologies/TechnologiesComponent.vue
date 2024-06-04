@@ -25,6 +25,8 @@ const technologies: Technology[] = await api.getData('technologies')
 
     <div class="content">
       <div class="image">
+        <img class="main-image-desktop" src="../../../../src/assets/images/technologies/cpu.svg" alt="">
+        <img class="main-image-mobile" src="../../../../src/assets/images/technologies/cpu-mobile.svg" alt="">
         <div class="blur blur-1"></div>
         <div class="blur blur-2"></div>
         <div class="blur blur-3"></div>
@@ -199,61 +201,30 @@ const technologies: Technology[] = await api.getData('technologies')
       }
 
       .box-vue {
-        .box-title {
-          color: #1cbd93;
-        }
-
-        .box-text {
-          color: #79978f;
-        }
-
-        img {
-          width: 90px
-        }
-
+        .box-title { color: #1cbd93; }
+        .box-text { color: #79978f; }
+        img { width: 90px }
         mask-image: linear-gradient(-80deg, rgba(255, 255, 255, 0.9) 10%, #ffffff 30%, rgba(255, 255, 255, 0.9) 90%);
         //animation: shine 3s infinite linear;
       }
 
       @keyframes shine {
-        from {
-          mask-position: 150%;
-        }
-        to {
-          mask-position: -50%;
-        }
+        from { mask-position: 150%; }
+        to { mask-position: -50%; }
       }
 
       .box-express {
-        .box-title {
-          color: #d5da3a;
-        }
-
-        .box-text {
-          color: #939378;
-        }
-
-        img {
-          width: 85px
-        }
-
+        .box-title { color: #d5da3a; }
+        .box-text { color: #939378; }
+        img { width: 85px }
         mask-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.9) 10%, #ffffff 50%, rgba(255, 255, 255, 0.9) 90%);
         //animation: shine 3.2s infinite linear;
       }
 
       .box-mongodb {
-        .box-title {
-          color: #2dbacf;
-        }
-
-        .box-text {
-          color: #758c8e;
-        }
-
-        img {
-          height: 85px
-        }
-
+        .box-title { color: #2dbacf; }
+        .box-text { color: #758c8e; }
+        img { height: 85px }
         mask-image: linear-gradient(-70deg, rgba(255, 255, 255, 0.9) 10%, #ffffff 70%, rgba(255, 255, 255, 0.9) 90%);
         //animation: shine 4s infinite linear;
       }
