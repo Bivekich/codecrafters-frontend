@@ -30,9 +30,6 @@ onMounted((): void => {
   const title = component.querySelector('.title') as HTMLElement
   title.style.opacity = '0'
 
-  const blur4 = component.querySelector('.blur-4') as HTMLElement
-  blur4.style.left = '-100vh'
-
   window.onscroll = (): void => {
     const distanceToComponent: number = component.getBoundingClientRect().top
 
