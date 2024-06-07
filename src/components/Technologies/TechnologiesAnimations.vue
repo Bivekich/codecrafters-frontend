@@ -47,11 +47,6 @@ onMounted((): void => {
 
     title.style.transition = `opacity ${transition}ms`
     title.style.opacity = '1'
-
-    setTimeout(() => {
-      blur4.style.transition = 'left 2s'
-      blur4.style.left = '0'
-    }, transition)
   }
 
   function gradientAnimation() {
