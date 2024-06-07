@@ -16,7 +16,6 @@ const technologies: Technology[] = await api.getData('technologies')
 
     <div class="title title-desktop">
       Используем новейшие скоростные технологии.
-      <div class="blur blur-4"></div>
     </div>
 
     <div class="title title-mobile">
@@ -109,13 +108,6 @@ const technologies: Technology[] = await api.getData('technologies')
 
 .blur-3 {
   left: 45%;
-}
-
-.blur-4 {
-  left: 0;
-  top: -50px;
-  width: 600px;
-  mask-image: linear-gradient(to right, rgba($dark-2, .8), rgba($dark-2, 0));
 }
 
 .title {
