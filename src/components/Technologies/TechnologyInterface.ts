@@ -4,5 +4,7 @@ export default interface Technology {
   name: string
   title: string
   group?: number
-  _id?: string
+  _id?: string,
+  image: string,
+  mobileLines?: string
 }

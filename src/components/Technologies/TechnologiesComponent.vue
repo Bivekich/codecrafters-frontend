@@ -34,7 +34,7 @@ const technologies: Technology[] = await api.getData('technologies')
       <div class="boxes">
         <div class="border-gradient border-gradient-vue">
           <div class="box box-vue">
-            <img src="https://imgur.com/xrWCDyV.png" alt="Картинка технологии">
+            <img :src="technologies[0].image" alt="Картинка технологии">
             <div class="box-bottom">
               <div class="box-title">{{ technologies[0].title }}</div>
               <div class="box-text">{{ technologies[0].description }}</div>
@@ -43,9 +43,9 @@ const technologies: Technology[] = await api.getData('technologies')
         </div>
 
         <div class="border-gradient border-gradient-express">
-          <img class="mobile-lines lines-express" src="https://imgur.com/JWGzkxy.png" alt="Картинка технологии">
+          <img class="mobile-lines lines-express" :src="technologies[1].mobileLines" alt="Картинка технологии">
           <div class="box box-express">
-            <img src="https://imgur.com/nkIscPY.png" alt="Картинка технологии">
+            <img :src="technologies[1].image" alt="Картинка технологии">
             <div class="box-bottom">
               <div class="box-title">{{ technologies[1].title }}</div>
               <div class="box-text">{{ technologies[1].description }}</div>
@@ -54,9 +54,9 @@ const technologies: Technology[] = await api.getData('technologies')
         </div>
 
         <div class="border-gradient border-gradient-mongodb">
-          <img class="mobile-lines lines-mongodb" src="https://imgur.com/EeweWAB.png" alt="Картинка технологии">
+          <img class="mobile-lines lines-mongodb" :src="technologies[2].mobileLines" alt="Картинка технологии">
           <div class="box box-mongodb">
-            <img src="https://imgur.com/Fcp17FH.png" alt="Картинка технологии">
+            <img :src="technologies[2].image" alt="Картинка технологии">
             <div class="box-bottom">
               <div class="box-title">{{ technologies[2].title }}</div>
               <div class="box-text">{{ technologies[2].description }}</div>
