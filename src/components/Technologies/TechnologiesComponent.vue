@@ -32,19 +32,34 @@ const technologies: Technology[] = await api.getData('technologies')
       </div>
 
       <div class="boxes">
-        <div
-          v-for="(technology, index) in technologies.filter((object) => object.isMain)" :key="technology._id"
-          class="border-gradient" :class="'border-gradient-' + technology.name"
-        >
-          <img
-            v-if="index !== 0" class="mobile-lines" :class="'lines-' + technology.name"
-            :src="'../../assets/images/technologies/' + technology.name + '-lines.svg'" alt="Картинка технологии"
-          >
-          <div :class="'box box-' + technology.name">
-            <img :src="'../../assets/images/technologies/' + technology.name + '.svg'" alt="Картинка технологии">
+        <div class="border-gradient border-gradient-vue">
+          <div class="box box-vue">
+            <img src="https://imgur.com/xrWCDyV.png" alt="Картинка технологии">
             <div class="box-bottom">
-              <div class="box-title">{{ technology.title }}</div>
-              <div class="box-text">{{ technology.description }}</div>
+              <div class="box-title">{{ technologies[0].title }}</div>
+              <div class="box-text">{{ technologies[0].description }}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-gradient border-gradient-express">
+          <img class="mobile-lines lines-express" src="https://imgur.com/JWGzkxy.png" alt="Картинка технологии">
+          <div class="box box-express">
+            <img src="https://imgur.com/nkIscPY.png" alt="Картинка технологии">
+            <div class="box-bottom">
+              <div class="box-title">{{ technologies[1].title }}</div>
+              <div class="box-text">{{ technologies[1].description }}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-gradient border-gradient-mongodb">
+          <img class="mobile-lines lines-mongodb" src="https://imgur.com/EeweWAB.png" alt="Картинка технологии">
+          <div class="box box-mongodb">
+            <img src="https://imgur.com/Fcp17FH.png" alt="Картинка технологии">
+            <div class="box-bottom">
+              <div class="box-title">{{ technologies[2].title }}</div>
+              <div class="box-text">{{ technologies[2].description }}</div>
             </div>
           </div>
         </div>

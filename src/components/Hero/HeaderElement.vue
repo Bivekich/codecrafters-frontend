@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
 import LinesElement from "@/components/Hero/LinesElement.vue";
 import type Hero from '@/components/Hero/HeroInterface'
 

@@ -7,6 +7,7 @@ import CommentsComponent from '@/components/Comments/CommentsComponent.vue'
 import FooterComponent from '@/components/Footer/FooterComponent.vue'
 
 import { useApi } from '@/stores/api'
+
 const api = useApi()
 </script>
 
