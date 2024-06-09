@@ -16,16 +16,10 @@ const handleClick = () => {
   <div class="container" id="comments">
     <div class="text">
       Исследуем
-      <div>эффективность</div>
-      ,
-      <div>технологичность</div>
-      и
-      <div>юзер-экспириенс</div>
-      .
+      <div>эффективность</div>, <div>технологичность</div> и <div>юзер-экспириенс</div>.
       <br><br>
       Большие люди доверяют
-      <div>CodeCrafters</div>
-      .
+      <div>CodeCrafters</div>.
     </div>
 
     <div class="button">

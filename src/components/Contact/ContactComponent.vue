@@ -113,7 +113,7 @@ const sendMessage = async () => {
     }
 
     .line:nth-child(1) {
-      width: 100vw;
+      width: 97vw;
       height: 1px;
       top: 40%;
       left: 0;

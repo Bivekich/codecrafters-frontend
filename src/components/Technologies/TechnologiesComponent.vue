@@ -212,7 +212,6 @@ const technologies: Technology[] = await api.getData('technologies')
         .box-text { color: #79978f; }
         img { width: 90px }
         mask-image: linear-gradient(-80deg, rgba(255, 255, 255, 0.9) 10%, #ffffff 30%, rgba(255, 255, 255, 0.9) 90%);
-        //animation: shine 3s infinite linear;
       }
 
       @keyframes shine {
@@ -223,9 +222,8 @@ const technologies: Technology[] = await api.getData('technologies')
       .box-express {
         .box-title { color: #d5da3a; }
         .box-text { color: #939378; }
-        img { width: 85px }
+        img { width: 100px; height: auto }
         mask-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.9) 10%, #ffffff 50%, rgba(255, 255, 255, 0.9) 90%);
-        //animation: shine 3.2s infinite linear;
       }
 
       .box-mongodb {
@@ -233,7 +231,6 @@ const technologies: Technology[] = await api.getData('technologies')
         .box-text { color: #758c8e; }
         img { height: 85px }
         mask-image: linear-gradient(-70deg, rgba(255, 255, 255, 0.9) 10%, #ffffff 70%, rgba(255, 255, 255, 0.9) 90%);
-        //animation: shine 4s infinite linear;
       }
     }
 

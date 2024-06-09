@@ -24,7 +24,7 @@ const orders: Order[] = await api.getData('orders')
         </div>
         <div class="border b2">
           <div class="box i2" :style="{backgroundImage: `url(${orders[1].image})`}"></div>
-          <a class="link l2" target="_blank" :href="orders[0].link">
+          <a class="link l2" target="_blank" :href="orders[1].link">
             <div>{{ orders[1].title }}</div>
             <span></span>
             <img src="../../assets/images/link-arrow.svg" alt="">
@@ -35,7 +35,7 @@ const orders: Order[] = await api.getData('orders')
       <div class="images right">
         <div class="border b3">
           <div class="box i3" :style="{backgroundImage: `url(${orders[2].image})`}"></div>
-          <a class="link l3" target="_blank" :href="orders[0].link">
+          <a class="link l3" target="_blank" :href="orders[2].link">
             <div>{{ orders[2].title }}</div>
             <span></span>
             <img src="../../assets/images/link-arrow.svg" alt="">
@@ -45,7 +45,7 @@ const orders: Order[] = await api.getData('orders')
         <div class="images-group">
           <div class="border b4">
             <div class="box i4" :style="{backgroundImage: `url(${orders[3].image})`}"></div>
-            <a class="link l4" target="_blank" :href="orders[0].link">
+            <a class="link l4" target="_blank" :href="orders[3].link">
               <div>{{ orders[3].title }}</div>
               <span></span>
               <img src="../../assets/images/link-arrow.svg" alt="">
@@ -54,11 +54,38 @@ const orders: Order[] = await api.getData('orders')
 
           <div class="border b5">
             <div class="box i5" :style="{backgroundImage: `url(${orders[4].image})`}"></div>
-            <a class="link l5" target="_blank" :href="orders[0].link">
+            <a class="link l5" target="_blank" :href="orders[4].link">
               <div>{{ orders[4].title }}</div>
               <span></span>
               <img src="../../assets/images/link-arrow.svg" alt="">
             </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper-mobile">
+      <div class="images left">
+        <div class="border b1">
+          <a target="_blank" :href="orders[0].link"><div class="box i1" :style="{backgroundImage: `url(${orders[0].image})`, cursor: 'pointer'}"></div></a>
+        </div>
+        <div class="border b2">
+          <a target="_blank" :href="orders[1].link"><div class="box i2" :style="{backgroundImage: `url(${orders[1].image})`, cursor: 'pointer'}"></div></a>
+        </div>
+      </div>
+
+      <div class="images right">
+        <div class="border b3">
+          <a target="_blank" :href="orders[2].link"><div class="box i3" :style="{backgroundImage: `url(${orders[2].image})`, cursor: 'pointer'}"></div></a>
+        </div>
+
+        <div class="images-group">
+          <div class="border b4">
+            <a target="_blank" :href="orders[3].link"><div class="box i4" :style="{backgroundImage: `url(${orders[3].image})`, cursor: 'pointer'}"></div></a>
+          </div>
+
+          <div class="border b5">
+            <a target="_blank" :href="orders[4].link"><div class="box i5" :style="{backgroundImage: `url(${orders[4].image})`, cursor: 'pointer'}"></div></a>
           </div>
         </div>
       </div>
@@ -96,7 +123,11 @@ const orders: Order[] = await api.getData('orders')
   margin-bottom: 50px;
 }
 
-.wrapper {
+.wrapper-mobile {
+  display: none;
+}
+
+.wrapper, .wrapper-mobile {
   display: flex;
   width: 400%;
   justify-content: center;
@@ -253,7 +284,7 @@ const orders: Order[] = await api.getData('orders')
     height: 1000px;
   }
 
-  .wrapper {
+  .wrapper, .wrapper-mobile {
     padding: 10px;
 
     .images {
@@ -278,10 +309,6 @@ const orders: Order[] = await api.getData('orders')
           a {
             display: inline-block;
           }
-        }
-
-        .link {
-          display: none;
         }
 
         // IMAGES
@@ -321,6 +348,14 @@ const orders: Order[] = await api.getData('orders')
 @media only screen and (max-width: 600px) {
   .title {
     font-size: 35px;
+  }
+  
+  .wrapper {
+    display: none;
+  }
+  
+  .wrapper-mobile {
+    display: flex;
   }
 }
 </style>
