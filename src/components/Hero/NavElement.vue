@@ -16,7 +16,7 @@ onMounted(() => {
 
 <template>
   <div class="nav">
-    <img class="logo logo-start" src="@/assets/images/codecrafters-logo.svg" alt="Codecrafters Logo">
+    <img class="logo logo-start" src="https://imgur.com/oGsc8iy.png" alt="Codecrafters Logo">
   </div>
 </template>
 
@@ -51,10 +51,9 @@ onMounted(() => {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
 
     img {
-      width: 50px;
+      width: 40px;
       mix-blend-mode: color-dodge;
       cursor: pointer;
 

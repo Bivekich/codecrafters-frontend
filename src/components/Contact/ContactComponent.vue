@@ -50,8 +50,8 @@ const sendMessage = async () => {
       </div>
     </div>
     <div class="right">
-      <img src="../../assets/images/contact/telegram-connect-1.svg" alt="">
-      <img src="../../assets/images/contact/telegram-connect-2.svg" alt="">
+      <img src="https://imgur.com/aBstJ98.png" alt="">
+      <img src="https://imgur.com/aURmpcp.png" alt="">
     </div>
   </div>
 </template>
@@ -165,6 +165,7 @@ const sendMessage = async () => {
       font-size: 18px;
       border-left: 1.5px solid white;
       transform: scale(1.02);
+      color: black;
       background: white;
       border-radius: 18px;
       border-bottom-left-radius: 0;
@@ -268,7 +269,7 @@ const sendMessage = async () => {
 
   .left {
     flex-direction: column;
-    width: 70%;
+    width: 80%;
     text-align: center;
     margin-top: 10%;
 

@@ -11,6 +11,7 @@ const technologies: Technology[] = await api.getData('technologies')
 <template>
   <div class="container" id="technologies">
     <TechnologiesAnimations />
+
     <div class="gradient"></div>
     <div class="gradient"></div>
 
@@ -25,7 +26,7 @@ const technologies: Technology[] = await api.getData('technologies')
     <div class="content">
       <div class="image">
         <img class="main-image-desktop" src="../../assets/images/technologies/cpu.svg" alt="Главная картинка">
-        <img class="main-image-mobile" src="../../assets/images/technologies/cpu-mobile.svg" alt="Главная картинка">
+        <img class="main-image-mobile" src="https://imgur.com/cZN5VGy.png" alt="Главная картинка">
         <div class="blur blur-1"></div>
         <div class="blur blur-2"></div>
         <div class="blur blur-3"></div>

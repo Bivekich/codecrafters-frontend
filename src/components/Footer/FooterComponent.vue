@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <img class="logo" src="../../assets/images/codecrafters-logo.svg" alt="">
+    <img class="logo" src="https://imgur.com/oGsc8iy.png" alt="">
     <div class="date">©{{ new Date().getFullYear() }}, CodeCrafters</div>
   </div>
 </template>

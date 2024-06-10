@@ -142,7 +142,7 @@ onMounted(() => {
       margin-top: 50px;
       background: linear-gradient(-120deg, $gradient-3);
       border-radius: 50px;
-      padding: 2px;
+      padding: 1px;
       mask-image: linear-gradient(-85deg, rgba(255, 255, 255, 0.4) 10%, #ffffff 50%, rgba(255, 255, 255, 0.4) 90%);;
       mask-size: 200%;
       -webkit-mask-image: linear-gradient(-85deg, rgba(255, 255, 255, 0.4) 10%, #ffffff 50%, rgba(255, 255, 255, 0.4) 90%);
